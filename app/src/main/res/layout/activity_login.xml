@@ -37,4 +37,10 @@
         android:layout_height="wrap_content"
         android:text="@string/login" />
 
+    <Button
+        android:id="@+id/btnSignup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign Up" />
+
 </LinearLayout>
