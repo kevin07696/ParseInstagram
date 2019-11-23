@@ -1,43 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="10dp"
+    tools:context=".MainActivity"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:layout_margin="10dp">
 
     <EditText
-        android:id="@+id/etDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/etDescription"
         android:ems="10"
         android:hint="@string/description"
-        android:inputType="textPersonName"
+        android:inputType="none"
         android:importantForAutofill="no" />
-
     <Button
-        android:id="@+id/btnCaptureImage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Take Picture" />
+        android:id="@+id/btnCaptureImage"
+        android:text="@string/take_picture"/>
 
     <ImageView
         android:id="@+id/ivPostImage"
         android:layout_width="200dp"
         android:layout_height="200dp"
+        android:contentDescription="@string/picturetaken"
         tools:srcCompat="@tools:sample/avatars" />
 
     <Button
-        android:id="@+id/btnSubmit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Submit" />
+        android:id="@+id/btnSubmit"
+        android:text="@string/submit"/>
 
     <Button
         android:id="@+id/btnLogout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Logout" />
+        android:text="@string/log_out" />
+
 </LinearLayout>
