@@ -1,6 +1,6 @@
-# Project 3 - *ParseInstagram*
+# Project 3 - *Parstagram*
 
-**ParseInstagram** is a photo sharing app similar to Instagram but using Parse as its backend.
+**Parstagram** is a photo sharing app similar to Instagram but using Parse as its backend.
 
 Time spent: **7** hours spent in total
 
