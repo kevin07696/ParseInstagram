@@ -21,7 +21,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.parstagram.Fragments.ComposeFragment;
 import com.example.parstagram.Fragments.PostsFragment;
@@ -41,8 +40,6 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private final String TAG = "MainActivity";
-
-    private SwipeRefreshLayout swipeContainer;
 
     private BottomNavigationView bottomNavigationView;
 

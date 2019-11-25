@@ -29,6 +29,8 @@ public class PostsFragment extends Fragment {
     protected PostsAdapter adapter;
     protected List<Post> mPosts;
 
+    protected SwipeRefreshLayout swipeContainer;
+
     public static final String TAG = "PostsFragment";
 
     // onCreateView to inflate view
@@ -50,6 +52,23 @@ public class PostsFragment extends Fragment {
         rvPosts.setAdapter(adapter);
         // set the layout manager on the recycler view
         rvPosts.setLayoutManager(new LinearLayoutManager(getContext()));
+        // Lookup the swipe container view
+        swipeContainer = view.findViewById(R.id.swipeContainer);
+        // Setup refresh listener which triggers new data loading
+        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                // Your code to refresh the list here.
+                // Make sure you call swipeContainer.setRefreshing(false)
+                // once the network request has completed successfully.
+                queryPosts();
+            }
+        });
+        // Configure the refreshing colors
+        swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright,
+                android.R.color.holo_green_light,
+                android.R.color.holo_orange_light,
+                android.R.color.holo_red_light);
 
         queryPosts();
     }
@@ -68,6 +87,12 @@ public class PostsFragment extends Fragment {
                 }
                 mPosts.addAll(posts);
                 adapter.notifyDataSetChanged();
+                // Remember to CLEAR OUT old items before appending in the new ones
+                adapter.clear();
+                // ...the data has come back, add new items to your adapter...
+                adapter.addAll(posts);
+                // Now we call setRefreshing(false) to signal refresh has finished
+                swipeContainer.setRefreshing(false);
                 for(int i = 0; i < posts.size(); i++) {
                     Post post = posts.get(i);
                     Log.d(TAG, "Post: " + post.getDescription() + " username: " + post.getUser().getUsername());
