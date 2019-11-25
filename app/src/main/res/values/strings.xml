@@ -13,4 +13,7 @@
     <string name="picturetaken">pictureTaken</string>
     <string name="logout">logout</string>
     <string name="log_out">log out</string>
+    <string name="kevin">Kevin</string>
+    <string name="image">Image</string>
+    <string name="an_iguana">An Iguana</string>
 </resources>
